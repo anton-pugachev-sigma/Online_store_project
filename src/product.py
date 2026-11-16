@@ -14,7 +14,7 @@ class Product:
         self.description = description
         self.__price = price
         if quantity == 0:
-            raise ValueError
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         self.quantity = quantity
 
     def __repr__(self) -> str:
