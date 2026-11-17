@@ -52,12 +52,10 @@ def test_category_raise_products_error() -> None:
 
 def test_category_correct_average_price(category_fruits) -> None:
     average_price_fruits = category_fruits.count_average_price()
-    assert average_price_fruits == 50
+    assert average_price_fruits == 50.0
 
 
 def test_category_zero_empty_products() -> None:
-    snacks = Category('snacks', 'harmful food', [])
+    snacks = Category("snacks", "harmful food", [])
     average_price = snacks.count_average_price()
-    assert average_price == 0
-
-
+    assert average_price == 0.0
