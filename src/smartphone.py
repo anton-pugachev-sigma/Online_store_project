@@ -1,5 +1,5 @@
 from src.product import Product
-
+from typing import Any
 
 class Smartphone(Product):
     """Класс для представления смартфонов"""
@@ -21,3 +21,7 @@ class Smartphone(Product):
         self.memory = memory
         self.color = color
         # print(repr(self))
+    @classmethod
+    def new_product(cls, product: dict[str, Any]) -> "Smartphone":
+        pass
+

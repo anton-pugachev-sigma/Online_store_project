@@ -1,12 +1,12 @@
 # Online_store_project
 ## Описание:
-Online_store_project - это проект-ядро для онлайн магазина с применением концепций 
-ООП.
+Online_store_project — это ядро каталога товаров для интернет-магазина.
+
 
 ## Установка
 #### Клонируйте репозиторий:
 ```bash
-git clone https://github.com/antonpugachev913-create/Online_store_project
+git clone https://github.com/anton-pugachev-sigma/Online_store_project
 ```
 
 #### Установите poetry:
