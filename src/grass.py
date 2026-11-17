@@ -1,3 +1,5 @@
+from typing import Any
+
 from src.product import Product
 
 
@@ -23,3 +25,7 @@ class Grass(Product):
         self.germination_period = germination_period
         self.color = color
         # print(repr(self))
+
+    @classmethod
+    def new_product(cls, product: dict[str, Any]) -> "Grass":
+        pass
