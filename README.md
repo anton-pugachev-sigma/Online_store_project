@@ -6,7 +6,7 @@ Online_store_project - это проект-ядро для онлайн мага
 ## Установка
 #### Клонируйте репозиторий:
 ```bash
-git clone https://github.com/antonpugachev913-create/Online_store_project
+git clone https://github.com/anton-pugachev-sigma/Online_store_project
 ```
 
 #### Установите poetry:
