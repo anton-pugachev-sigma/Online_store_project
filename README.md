@@ -64,17 +64,16 @@ poetry run mypy .
 from src.product import Product
 from src.category import Category
 
-#Инициализируем классы
+# 1. Инициализация товаров и категории
 apple = Product("apple", "red fruit", 100, 100) # создаем объект класса Product
 banana = Product("banana", "sweet yellow fruit", 30, 50)
 cherry = Product("cherry", "purple berry", 100, 250)
 category_fruits = Category("fruits", "fresh fruits", [apple, banana, cherry]) # создаем объект класса Category
-
-
 # При объявлении продукта с нулевым кол-вом
 # программа упадёт с ошибкой ValueError("Товар с нулевым количеством не может быть добавлен")
 bad_product = Product("apple", "red fruit", 100, 0)
 
+# 2. Работа со свойствами и методами
 #Получение данных класса
 apple.price = 20 # устанавливаем новую цену для продукта
 products = category_fruits.products #получаем список товаров в виде единой строки
@@ -88,6 +87,7 @@ average_price_fruits = category_fruits.count_average_price() # в нашём с�
 snacks = Category("snacks", "harmful food", [])
 average_price_snacks = snacks.count_average_price() # 0
 
+#3. Отладка
 print(repr(apple)) # получаем отладочный вывод для инициализации объекта класса Product
 
 
