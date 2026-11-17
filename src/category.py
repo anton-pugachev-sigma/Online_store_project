@@ -24,6 +24,20 @@ class Category:
         quantity_products = sum(cnt.quantity for cnt in self.get_list_products)
         return f"{self.name}, количество продуктов: {quantity_products} шт.\n"
 
+
+    def count_average_price(self) -> int:
+        products = self.__products
+        total_products = 0
+        for product in products:
+            total_products += product.price
+
+        try:
+            average_price = total_products / len(products)
+        except ZeroDivisionError:
+            average_price = 0
+
+        return average_price
+
     def add_product(self, product):
         if isinstance(product, Product):
             self.__products.append(product)
