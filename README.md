@@ -1,3 +1,5 @@
+from tests.conftest import category_fruits
+
 # Online_store_project
 ## Описание:
 Online_store_project — это ядро каталога товаров для интернет-магазина.
@@ -66,19 +68,36 @@ poetry run mypy .
 from src.product import Product
 from src.category import Category
 
-#Инициализируем классы
-product_1 = Product("apple", "sweet fruit", 500, 10) # создаем объект класса Product
-product_2 = Product("banana", "sweet yellow fruit", 30, 50)
-category_1 = Category("fruits", "fresh fruits", ["apple", "banana", "cherry"]) # создаем объект класса Category
+# 1. Инициализация товаров и категории
+apple = Product("apple", "red fruit", 100, 100) # создаем объект класса Product
+banana = Product("banana", "sweet yellow fruit", 30, 50)
+cherry = Product("cherry", "purple berry", 100, 250)
+category_fruits = Category("fruits", "fresh fruits", [apple, banana, cherry]) # создаем объект класса Category
+# При объявлении продукта с нулевым кол-вом
+# программа упадёт с ошибкой ValueError("Товар с нулевым количеством не может быть добавлен")
+bad_product = Product("apple", "red fruit", 100, 0)
 
-
+# 2. Работа со свойствами и методами
 #Получение данных класса
-product_1.price = 100 # устанавливаем новую цену для продукта
-products = category_1.products #получаем список товаров в виде единой строки
+apple.price = 20 # устанавливаем новую цену для продукта
+products = category_fruits.products #получаем список товаров в виде единой строки
 
-total_amount = product_1.total_amount + product_2.total_amount # вычисляем общую сумму произведений цены на количество у двух объектов.
+total_amount = apple.total_amount + banana.total_amount # вычисляем общую сумму произведений цены на количество у двух объектов.
 
-print(repr(product_1)) # получаем отладочный вывод для инициализации объекта класса Product
+#Высчитывание среднего ценника продуктов категории
+average_price_fruits = category_fruits.count_average_price() # в нашём случае получим ответ 50.0
+
+#Если в категории нет товаров, то мы получим ответ 0
+snacks = Category("snacks", "harmful food", [])
+average_price_snacks = snacks.count_average_price() # 0
+
+#3. Отладка
+print(repr(apple)) # получаем отладочный вывод для инициализации объекта класса Product
+
+
+
+
+
 ```
 
 

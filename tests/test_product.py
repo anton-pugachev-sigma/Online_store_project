@@ -100,3 +100,10 @@ def test_add_same_class_raise_error(init_grass_dict, init_smartphone_dict) -> No
         _ = shadow_grass + poco
     with pytest.raises(TypeError):
         _ = emerald_grass + iphone
+
+
+def test_raise_value_error_zero_quantity():
+    with pytest.raises(
+        ValueError, match="Товар с нулевым количеством не может быть добавлен"
+    ):
+        Product("apple", "red fruit", 20, 0)
